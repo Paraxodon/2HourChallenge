@@ -22,6 +22,7 @@ int main(void)
     floor->enabled = false;
 
     PhysicsBody player = CreatePhysicsBodyCircle((Vector2){screenWidth/2, screenHeight/2}, 45, 10);
+    SetPhysicsGravity(0, 3);
 
     SetTargetFPS(60);               // Set our game to run at 60 frames-per-second
     //--------------------------------------------------------------------------------------
