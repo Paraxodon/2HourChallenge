@@ -30,6 +30,10 @@ int main(void)
     // Main game loop
     while (!WindowShouldClose())    // Detect window close button or ESC key
     {
+        if(IsKeyPressed(KEY_SPACE)) player->velocity.y = -0.2f;
+        if(IsKeyDown(KEY_A)) player->velocity.x = -0.1f;
+        if(IsKeyDown(KEY_D)) player->velocity.x = 0.1f;
+
         // Draw
         //----------------------------------------------------------------------------------
         BeginDrawing();
