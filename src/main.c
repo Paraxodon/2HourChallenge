@@ -14,6 +14,12 @@ int main(void)
     Vector2 initialPos = {screenWidth/2, screenHeight/2};
 
     InitWindow(screenWidth, screenHeight, "Game");
+    InitPhysics();
+
+    PhysicsBody floor = CreatePhysicsBodyRectangle((Vector2){screenWidth/2, screenHeight}, 500, 100, 10);
+    floor->enabled = false;
+
+    PhysicsBody player = CreatePhysicsBodyCircle((Vector2){screenWidth/2, screenHeight/2}, 45, 10);
 
     SetTargetFPS(60);               // Set our game to run at 60 frames-per-second
     //--------------------------------------------------------------------------------------
@@ -26,7 +32,7 @@ int main(void)
         BeginDrawing();
 
             ClearBackground(RAYWHITE);
-            DrawCircle(initialPos.x, initialPos.y, 15, RED);
+            DrawCircle(player->position.x, player->position.y, 15, RED);
 
             DrawFPS(0,0);
 
@@ -36,6 +42,7 @@ int main(void)
 
     // De-Initialization
     //--------------------------------------------------------------------------------------
+    ClosePhysics();
     CloseWindow();        // Close window and OpenGL context
     //--------------------------------------------------------------------------------------
 
