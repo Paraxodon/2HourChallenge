@@ -1,7 +1,9 @@
 #include "raylib.h"
 #include "raymath.h"
-#include "physac.h"
 #include <stdio.h>
+
+#define PHYSAC_IMPLEMENTATION
+#include "physac.h"
 
 //------------------------------------------------------------------------------------
 // Program main entry point
